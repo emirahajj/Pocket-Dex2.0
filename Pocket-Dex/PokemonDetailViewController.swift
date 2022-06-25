@@ -25,9 +25,13 @@ class PokemonDetailViewController: UIViewController {
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var pokeImage: UIImageView!
     
+    @IBOutlet weak var type1: TypeButtonView!
+    @IBOutlet weak var type2: TypeButtonView!
     @IBOutlet weak var dexEntryText: PaddingLabel!
-    @IBOutlet weak var type1: PaddingLabel!
     @IBOutlet var statStackViews: [IndividualStatView]!
+    
+    @IBOutlet weak var typesStackView: UIStackView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +41,6 @@ class PokemonDetailViewController: UIViewController {
         abilitiesView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         pokeball.transform = pokeball.transform.rotated(by: .pi / 6)
         self.navigationController?.navigationBar.isTranslucent = true
-
 
         
 
@@ -60,9 +63,30 @@ class PokemonDetailViewController: UIViewController {
                 return
             }
             self.pokemon = response
-            let firstType = response.types[0]
-            if response.types.count == 1 {
+            
+            //loop over types array instead
+            let firstType = response.types[0] //of type POkeType
+
+//            self.type2.configureImageAndText(type: .fire)
+//            self.type1.configureImageAndText(type: .psychic)
+            let typesCount = response.types.count
+
+
+            for i in 0..<response.types.count{
+//                let newType =
                 
+                if response.types.count == 1 {
+                    self.type1.configureImageAndText(type: response.types[0])
+                    self.type2.removeFromSuperview()
+                    break
+                }
+                else {
+                    self.type1.configureImageAndText(type: response.types[0])
+                    self.type2.configureImageAndText(type: response.types[1])
+                }
+                
+
+                //if response.types.count == 1 { remove the 2nd outlet}
             }
             self.navigationController?.navigationBar.barTintColor = colorDict[firstType]?.adjust(by: -20)
             self.navigationController?.navigationBar.scrollEdgeAppearance?.backgroundColor = colorDict[firstType]?.adjust(by: -20)
@@ -86,13 +110,13 @@ class PokemonDetailViewController: UIViewController {
             }
             
             //type button styling
-            self.type1.layer.masksToBounds = true
-            self.type1.text = response.types[0].rawValue.uppercased()
-            self.type1.backgroundColor = colorDict[response.types[0]]
-            self.type1.tintColor = .white
-            self.type1.layer.cornerRadius = 8
-            self.type1.layer.borderWidth = 1
-            self.type1.layer.borderColor = UIColor.white.cgColor
+//            self.type1.layer.masksToBounds = true
+//            self.type1.text = response.types[0].rawValue.uppercased()
+//            self.type1.backgroundColor = colorDict[response.types[0]]
+//            self.type1.tintColor = .white
+//            self.type1.layer.cornerRadius = 8
+//            self.type1.layer.borderWidth = 1
+//            self.type1.layer.borderColor = UIColor.white.cgColor
 
 
             self.dexEntryText.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]

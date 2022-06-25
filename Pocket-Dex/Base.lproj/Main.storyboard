@@ -43,32 +43,15 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="pUO-9C-AFp">
                                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="714.5"/>
                                                                 <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="2vl-fM-b6s">
-                                                                        <rect key="frame" x="49" y="0.0" width="316.5" height="128"/>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="2vl-fM-b6s" userLabel="Types Stack View">
+                                                                        <rect key="frame" x="109.5" y="0.0" width="195" height="128"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="1000" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kQ4-lL-GQ2" customClass="PaddingLabel" customModule="Pocket_Dex" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="61.5" height="128"/>
-                                                                                <color key="backgroundColor" red="0.29619783370000002" green="0.31723597209999999" blue="0.46025409220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                                <userDefinedRuntimeAttributes>
-                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingLeft">
-                                                                                        <real key="value" value="10"/>
-                                                                                    </userDefinedRuntimeAttribute>
-                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingRight">
-                                                                                        <real key="value" value="10"/>
-                                                                                    </userDefinedRuntimeAttribute>
-                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingTop">
-                                                                                        <real key="value" value="5"/>
-                                                                                    </userDefinedRuntimeAttribute>
-                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingBottom">
-                                                                                        <real key="value" value="5"/>
-                                                                                    </userDefinedRuntimeAttribute>
-                                                                                </userDefinedRuntimeAttributes>
-                                                                            </label>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sLB-X1-Nxz" userLabel="Type1" customClass="TypeButtonView" customModule="Pocket_Dex" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="102" height="128"/>
+                                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                            </view>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VZv-8H-eXy" customClass="TypeButtonView" customModule="Pocket_Dex" customModuleProvider="target">
-                                                                                <rect key="frame" x="76.5" y="0.0" width="240" height="128"/>
+                                                                                <rect key="frame" x="117" y="0.0" width="78" height="128"/>
                                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                             </view>
                                                                         </subviews>
@@ -366,7 +349,9 @@
                         <outlet property="pokeImage" destination="G8Y-OM-Cw1" id="QFh-7P-a14"/>
                         <outlet property="pokeball" destination="8iX-eR-R9Q" id="drC-tq-jVZ"/>
                         <outlet property="topView" destination="EOM-IM-HMG" id="9az-2i-4Bu"/>
-                        <outlet property="type1" destination="kQ4-lL-GQ2" id="nef-WH-Ee1"/>
+                        <outlet property="type1" destination="sLB-X1-Nxz" id="YxC-Gp-Z4h"/>
+                        <outlet property="type2" destination="VZv-8H-eXy" id="FP9-2v-Hhv"/>
+                        <outlet property="typesStackView" destination="2vl-fM-b6s" id="E2a-U4-2GV"/>
                         <outletCollection property="statStackViews" destination="Hd4-NW-sdA" collectionClass="NSMutableArray" id="Tkj-XQ-Heu"/>
                         <outletCollection property="statStackViews" destination="0pG-8k-Nxf" collectionClass="NSMutableArray" id="dxj-0d-HeT"/>
                         <outletCollection property="statStackViews" destination="f79-sW-7ae" collectionClass="NSMutableArray" id="RZZ-8y-dGe"/>
@@ -765,9 +750,6 @@
     <designables>
         <designable name="NwY-91-E9T">
             <size key="intrinsicContentSize" width="1405.5" height="20.5"/>
-        </designable>
-        <designable name="kQ4-lL-GQ2">
-            <size key="intrinsicContentSize" width="61.5" height="30.5"/>
         </designable>
     </designables>
     <resources>

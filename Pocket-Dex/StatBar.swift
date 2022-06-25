@@ -1,19 +1,17 @@
 //
-//  TypeButtonView.swift
+//  StatBar.swift
 //  Pocket-Dex
 //
-//  Created by Emira Shano on 6/23/22.
+//  Created by Emira Shano on 6/25/22.
 //
 
 import UIKit
 
-class TypeButtonView: UIView {
-    
+class StatBar: UIView {
 
-    @IBOutlet weak var typeName: PaddingLabel!
-    
     @IBOutlet var contentView: UIView!
-    static let identifier = "TypeButtonView"
+    
+    static let identifier = "StatBar"
 
     
     required init?(coder aDecoder: NSCoder) {
@@ -35,23 +33,13 @@ class TypeButtonView: UIView {
 
             view.frame = bounds
             view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        //set background styling etc.
+            //set background styling etc.
         
             
+
             addSubview(view)
 
         }
-    
-    func configureImageAndText(type : PokeType){
-        typeName.text = type.rawValue.uppercased()
-        contentView.layer.masksToBounds = true
-        contentView.backgroundColor = colorDict[type]
-        contentView.tintColor = .white
-        contentView.layer.cornerRadius = 8
-        contentView.layer.borderWidth = 1
-        contentView.layer.borderColor = UIColor.white.cgColor
-        
-    }
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -59,7 +47,5 @@ class TypeButtonView: UIView {
         // Drawing code
     }
     */
-    
-    
 
 }
