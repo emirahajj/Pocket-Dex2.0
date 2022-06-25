@@ -15,6 +15,8 @@
 		044ACCB22865284D0015F066 /* TypeButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044ACCB12865284D0015F066 /* TypeButtonView.xib */; };
 		04C66710285E3FC1001471D4 /* Reference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6670F285E3FC1001471D4 /* Reference.swift */; };
 		04C66716285EE092001471D4 /* PokemonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C66715285EE092001471D4 /* PokemonDetailViewController.swift */; };
+		2D083B642865641C00E36EA8 /* AbilitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D083B632865641C00E36EA8 /* AbilitiesView.swift */; };
+		2D083B662865642F00E36EA8 /* AbilitiesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D083B652865642F00E36EA8 /* AbilitiesView.xib */; };
 		2DB49D632811290A00EA28FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB49D622811290A00EA28FF /* AppDelegate.swift */; };
 		2DB49D652811290A00EA28FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB49D642811290A00EA28FF /* SceneDelegate.swift */; };
 		2DB49D672811290A00EA28FF /* PokedexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB49D662811290A00EA28FF /* PokedexViewController.swift */; };
@@ -32,6 +34,8 @@
 		044ACCB12865284D0015F066 /* TypeButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TypeButtonView.xib; sourceTree = "<group>"; };
 		04C6670F285E3FC1001471D4 /* Reference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reference.swift; sourceTree = "<group>"; };
 		04C66715285EE092001471D4 /* PokemonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailViewController.swift; sourceTree = "<group>"; };
+		2D083B632865641C00E36EA8 /* AbilitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilitiesView.swift; sourceTree = "<group>"; };
+		2D083B652865642F00E36EA8 /* AbilitiesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AbilitiesView.xib; sourceTree = "<group>"; };
 		2DB49D5F2811290A00EA28FF /* Pocket-Dex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pocket-Dex.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DB49D622811290A00EA28FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DB49D642811290A00EA28FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +66,15 @@
 			path = TypeButton;
 			sourceTree = "<group>";
 		};
+		2D083B62286563E200E36EA8 /* AbilitiesComponent */ = {
+			isa = PBXGroup;
+			children = (
+				2D083B632865641C00E36EA8 /* AbilitiesView.swift */,
+				2D083B652865642F00E36EA8 /* AbilitiesView.xib */,
+			);
+			path = AbilitiesComponent;
+			sourceTree = "<group>";
+		};
 		2DB49D562811290A00EA28FF = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +94,7 @@
 		2DB49D612811290A00EA28FF /* Pocket-Dex */ = {
 			isa = PBXGroup;
 			children = (
+				2D083B62286563E200E36EA8 /* AbilitiesComponent */,
 				044ACCAE286527F60015F066 /* TypeButton */,
 				04C66715285EE092001471D4 /* PokemonDetailViewController.swift */,
 				0419866D28637C6F00A634F6 /* PokemonDetailVC.swift */,
@@ -158,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				044ACCB22865284D0015F066 /* TypeButtonView.xib in Resources */,
+				2D083B662865642F00E36EA8 /* AbilitiesView.xib in Resources */,
 				2DB49D6F2811290C00EA28FF /* LaunchScreen.storyboard in Resources */,
 				2DB49D6C2811290C00EA28FF /* Assets.xcassets in Resources */,
 				2DB49D6A2811290A00EA28FF /* Main.storyboard in Resources */,
@@ -176,6 +191,7 @@
 				2DB49D632811290A00EA28FF /* AppDelegate.swift in Sources */,
 				04440D46286291D500A2DF05 /* APIHelper.swift in Sources */,
 				044ACCB0286528360015F066 /* TypeButtonView.swift in Sources */,
+				2D083B642865641C00E36EA8 /* AbilitiesView.swift in Sources */,
 				04C66710285E3FC1001471D4 /* Reference.swift in Sources */,
 				0419866E28637C6F00A634F6 /* PokemonDetailVC.swift in Sources */,
 				041986702863E57D00A634F6 /* PaddedLabel.swift in Sources */,
