@@ -21,6 +21,7 @@ class PokemonDetailViewController: UIViewController {
     
     @IBOutlet weak var abilitiesView: UIView!
     
+    @IBOutlet weak var outerStack: UIStackView!
     @IBOutlet weak var pokeball: UIImageView!
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var pokeImage: UIImageView!
@@ -39,7 +40,7 @@ class PokemonDetailViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.title = pokename.capitalized
         topView.layer.cornerRadius = 20;
-        topView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+//        topView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         pokeball.transform = pokeball.transform.rotated(by: .pi / 6)
 
         fetchPokemonSpecies(self.pokemonSpeciesEndpointURL, successCallBack: {response in
@@ -102,12 +103,14 @@ class PokemonDetailViewController: UIViewController {
             }
             
             //configure middle view
-            self.topView.layer.shadowRadius = 5
-            self.topView.layer.shadowColor = UIColor.black.cgColor
-            self.topView.layer.shadowOffset = CGSize(width: 1, height: 10)
             self.topView.backgroundColor = colorDict[firstType]?.adjust(by: -20)
-            self.topView.layer.shadowOpacity = 0.4
+//            self.topView.addBottomShadow()
+            self.topView.layer.shadowRadius = 0.5
+            self.topView.layer.shadowColor = UIColor.black.cgColor
+            self.topView.layer.shadowOffset = CGSize(width: 0, height: 5)
             self.topView.layer.masksToBounds = false
+            //self.topView.layer.shadowOpacity = 0.5
+            //            self.outerStack.layer.shadowOpacity = 0.5
 
 
         }, errorCallBack: {error in
@@ -122,7 +125,7 @@ class PokemonDetailViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         guard let destination = segue.destination as? MoveSetVC else {return}
-        
+        print(pokemon.machineMoves)
         destination.machineMoves = pokemon.machineMoves
         destination.tutorMoves = pokemon.tutorMoves
         destination.levelUpMoves = pokemon.levelUpMoves
