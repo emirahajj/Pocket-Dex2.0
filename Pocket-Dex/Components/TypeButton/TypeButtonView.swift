@@ -13,47 +13,47 @@ class TypeButtonView: UIView {
     @IBOutlet weak var typeName: PaddingLabel!
     
     @IBOutlet var contentView: UIView!
-    static let identifier = "TypeButtonView"
 
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        initSubviews()
+        customInit()
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        initSubviews()
+        customInit()
     }
     
-    func initSubviews() {
-
-        let nib = UINib(nibName: TypeButtonView.identifier, bundle: nil)
-
-            guard let view = nib.instantiate(withOwner: self, options: nil).first as?
-                                UIView else {fatalError("Unable to convert nib")}
-
-            view.frame = bounds
-            view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.backgroundColor = .clear
-        view.layer.masksToBounds = true
-
-        //set background styling etc.
-        
-            
-            addSubview(view)
-
+    func customInit() {
+        contentView = loadViewFromNib(nibName: "TypeButtonView")
+        contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        layer.backgroundColor = UIColor.red.cgColor
+        layer.cornerRadius = 6
+        layer.shadowOpacity = 1.0
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOffset = CGSize(width: 2, height: 2)
+        layer.masksToBounds = true
+        contentView.frame = self.bounds
+        addSubview(contentView)
         }
     
     func configureImageAndText(type : PokeType){
         typeName.text = type.rawValue.uppercased()
-        contentView.layer.masksToBounds = true
-        contentView.backgroundColor = colorDict[type]
-        contentView.tintColor = .white
-        contentView.layer.cornerRadius = 12
+        layer.backgroundColor = colorDict[type]?.cgColor
+
+
         //contentView.layer.borderWidth = 1
         //contentView.layer.borderColor = UIColor.white.cgColor
         
+    }
+    
+    func loadViewFromNib(nibName: String) -> UIView{
+        let bundle = Bundle(for: type(of: self))
+        let nib = UINib(nibName: nibName, bundle: bundle)
+        let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
+        
+        return view
     }
     /*
     // Only override draw() if you perform custom drawing.

@@ -35,6 +35,7 @@ class PokedexViewController: UIViewController, UITableViewDelegate, UITableViewD
 //        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
 //        UINavigationBar.appearance().shadowImage = UIImage()
 //        UINavigationBar.appearance().isTranslucent = true
+//        self.tabBarController?.tabBar.itemPositioning = .centered
         
 //        //ios 13 and after
 //        let appearance = UINavigationBarAppearance()

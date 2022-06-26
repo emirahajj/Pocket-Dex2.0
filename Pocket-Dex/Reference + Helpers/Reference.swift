@@ -123,7 +123,7 @@ var StatLookup = [
     "S.DEF":"special-defense" ,
     "SP":"speed",
 ]
-var statOrder = ["hp", "attack", "defense", "special-attack", "special-defense", "speed"]
+var statOrder = ["HP", "ATK", "DEF", "S.ATK", "S.DEF", "SP"]
 
 extension UIView {
 func addBottomShadow() {

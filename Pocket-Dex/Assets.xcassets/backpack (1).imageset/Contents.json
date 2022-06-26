@@ -1,11 +1,12 @@
 {
   "images" : [
     {
-      "filename" : "backpack (1).png",
+      "filename" : "bag-1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "bag.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

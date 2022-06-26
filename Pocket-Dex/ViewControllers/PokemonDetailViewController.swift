@@ -30,7 +30,8 @@ class PokemonDetailViewController: UIViewController {
     @IBOutlet weak var type1: TypeButtonView!
     @IBOutlet weak var type2: TypeButtonView!
     @IBOutlet weak var dexEntryText: PaddingLabel!
-    @IBOutlet var statStackViews: [IndividualStatView]!
+    
+    @IBOutlet var statBars: [StatBar]!
     
     @IBOutlet weak var typesStackView: UIStackView!
     
@@ -39,8 +40,8 @@ class PokemonDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = pokename.capitalized
-        topView.layer.cornerRadius = 20;
-//        topView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        abilitiesView.layer.cornerRadius = 20;
+        abilitiesView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         pokeball.transform = pokeball.transform.rotated(by: .pi / 6)
 
         fetchPokemonSpecies(self.pokemonSpeciesEndpointURL, successCallBack: {response in
@@ -70,6 +71,7 @@ class PokemonDetailViewController: UIViewController {
             
             //configure main view background
             self.view.backgroundColor = colorDict[firstType]?.adjust(by: -20)
+            self.view.layer.shadowOpacity = 0.5
             
             //configure type buttons
             self.type1.configureImageAndText(type: response.types[0])
@@ -93,24 +95,25 @@ class PokemonDetailViewController: UIViewController {
                 self.pokeImage.layer.shadowOffset = CGSize(width: 2, height: 2)
             }
             
-            //configure the statStackview labels
-            for i in 0..<self.statStackViews.count {
-                let convertedStat = StatLookup[self.statStackViews[i].leftLabel.text!] //turns HP -> hp so we can look up in dctionary
+//            //configure the statStackview labels
+            for i in 0..<self.statBars.count {
+                let convertedStat = StatLookup[statOrder[i]] //turns HP -> hp so we can look up in dctionary
                 let statAmount = response.stats[convertedStat!]
-                self.statStackViews[i].rightLabel.text = String(statAmount!) //in parenthesis is an Integer
-                self.statStackViews[i].layer.backgroundColor = colorDict[response.types[0]]?.cgColor
-                self.statStackViews[i].spacing = CGFloat(statAmount!/3)
+                
+                //pass in statAmount + converted stat into the function
+                self.statBars[i].configureInfo(stat: statOrder[i], amount: statAmount!, type: response.types[0])
+
             }
             
             //configure middle view
-            self.topView.backgroundColor = colorDict[firstType]?.adjust(by: -20)
-//            self.topView.addBottomShadow()
-            self.topView.layer.shadowRadius = 0.5
-            self.topView.layer.shadowColor = UIColor.black.cgColor
-            self.topView.layer.shadowOffset = CGSize(width: 0, height: 5)
-            self.topView.layer.masksToBounds = false
-            //self.topView.layer.shadowOpacity = 0.5
+            self.abilitiesView.backgroundColor = colorDict[firstType]?.adjust(by: -20)
+            self.abilitiesView.layer.shadowRadius = 3
+            self.abilitiesView.layer.shadowColor = UIColor.black.cgColor
+            self.abilitiesView.layer.shadowOffset = CGSize(width: 0, height: 5)
+            self.abilitiesView.layer.masksToBounds = false
+            self.abilitiesView.layer.shadowOpacity = 0.5
             //            self.outerStack.layer.shadowOpacity = 0.5
+            self.abilitiesView.layer.shadowOffset = CGSize(width: 0, height: -8)
 
 
         }, errorCallBack: {error in
