@@ -35,7 +35,9 @@ class TypeButtonView: UIView {
 
             view.frame = bounds
             view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.backgroundColor = .yellow
+        view.backgroundColor = .clear
+        view.layer.masksToBounds = true
+
         //set background styling etc.
         
             
@@ -49,8 +51,8 @@ class TypeButtonView: UIView {
         contentView.backgroundColor = colorDict[type]
         contentView.tintColor = .white
         contentView.layer.cornerRadius = 12
-        contentView.layer.borderWidth = 1
-        contentView.layer.borderColor = UIColor.white.cgColor
+        //contentView.layer.borderWidth = 1
+        //contentView.layer.borderColor = UIColor.white.cgColor
         
     }
     /*

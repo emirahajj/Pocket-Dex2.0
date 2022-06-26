@@ -21,7 +21,7 @@
             <subviews>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TypeName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zgg-if-oaL" customClass="PaddingLabel" customModule="Pocket_Dex" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="340" height="72"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                     <userDefinedRuntimeAttributes>
@@ -54,7 +54,7 @@
     </objects>
     <designables>
         <designable name="Zgg-if-oaL">
-            <size key="intrinsicContentSize" width="102.5" height="30.5"/>
+            <size key="intrinsicContentSize" width="74" height="18"/>
         </designable>
     </designables>
     <resources>

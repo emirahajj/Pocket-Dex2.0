@@ -78,6 +78,20 @@ enum MoveType: String {
     case levelUp = "level-up"
 }
 
+struct MachineMove {
+    var name: String
+    var versionGroup: String
+}
+struct TutorMove {
+    var name: String
+    var versionGroup: String
+}
+struct LevelUpMove {
+    var name: String
+    var versionGroup: String
+    var levelLearned: Int
+}
+
 struct Pokemon: Decodable {
     var name: String
     var id: Int
@@ -95,19 +109,7 @@ struct Pokemon: Decodable {
     
     // our Pokemon Detail VC is going to display all the moves this pokemon can learn under three categories: machine moves, tutor moves, and level up moves.
     // three separate structs are created with a name and versionGroup so they can be easily be filtered by gameVerision. Creating a generic Move object wastes space since the level learned property will be 0 for all types that are not level up moves.
-    struct MachineMove {
-        var name: String
-        var versionGroup: String
-    }
-    struct TutorMove {
-        var name: String
-        var versionGroup: String
-    }
-    struct LevelUpMove {
-        var name: String
-        var versionGroup: String
-        var levelLearned: Int
-    }
+
 
     
     init(from decoder: Decoder) throws {
