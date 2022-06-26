@@ -25,6 +25,7 @@ class PokemonDetailViewController: UIViewController {
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var pokeImage: UIImageView!
     
+    @IBOutlet weak var dexNumber: UILabel!
     @IBOutlet weak var type1: TypeButtonView!
     @IBOutlet weak var type2: TypeButtonView!
     @IBOutlet weak var dexEntryText: PaddingLabel!
@@ -36,21 +37,17 @@ class PokemonDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = pokename.capitalized
-//        topView.layer.cornerRadius = 20
         abilitiesView.layer.cornerRadius = 20;
         abilitiesView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         pokeball.transform = pokeball.transform.rotated(by: .pi / 6)
-        self.navigationController?.navigationBar.isTranslucent = true
-
-        
 
         fetchPokemonSpecies(self.pokemonSpeciesEndpointURL, successCallBack: {response in
             guard let response = response else {
                 return
             }
             let dexEntries = response.dexEntries.filter{$0.language == "en"}
-            self.dexEntryText.text = dexEntries[0].text.replacingOccurrences(of: "\n", with: " ")
-            //print(response)
+            self.dexEntryText.text = dexEntries[0].text.replacingOccurrences(of: "\\s", with: " ", options: .regularExpression)
+
         }, errorCallBack: {error in
             guard let error = error else {
                 return
@@ -64,33 +61,24 @@ class PokemonDetailViewController: UIViewController {
             }
             self.pokemon = response
             
-            //loop over types array instead
-            let firstType = response.types[0] //of type POkeType
-
-//            self.type2.configureImageAndText(type: .fire)
-//            self.type1.configureImageAndText(type: .psychic)
+            self.dexNumber.text = styleDexNumber(num: response.id)
+            
+            let firstType = response.types[0] //extracting the color for the view using PokeType
             let typesCount = response.types.count
-
-
-            for i in 0..<response.types.count{
-//                let newType =
-                
-                if response.types.count == 1 {
-                    self.type1.configureImageAndText(type: response.types[0])
-                    self.type2.removeFromSuperview()
-                    break
-                }
-                else {
-                    self.type1.configureImageAndText(type: response.types[0])
-                    self.type2.configureImageAndText(type: response.types[1])
-                }
-                
-
-                //if response.types.count == 1 { remove the 2nd outlet}
+            
+            //configure type buttons
+            self.type1.configureImageAndText(type: response.types[0])
+            
+            switch typesCount {
+            case 1:
+                self.type2.removeFromSuperview()
+                break
+            case 2:
+                self.type2.configureImageAndText(type: response.types[1])
+            default:
+                return
             }
-            self.navigationController?.navigationBar.barTintColor = colorDict[firstType]?.adjust(by: -20)
-            self.navigationController?.navigationBar.scrollEdgeAppearance?.backgroundColor = colorDict[firstType]?.adjust(by: -20)
-            self.navigationController?.navigationBar.standardAppearance.backgroundColor = colorDict[firstType]?.adjust(by: -20)
+            
             self.view.backgroundColor = colorDict[firstType]?.adjust(by: -20)
             
             self.abilitiesView.layer.shadowRadius = 5
@@ -108,21 +96,6 @@ class PokemonDetailViewController: UIViewController {
                 self.statStackViews[i].layer.backgroundColor = colorDict[response.types[0]]?.cgColor
                 self.statStackViews[i].spacing = CGFloat(statAmount!/3)
             }
-            
-            //type button styling
-//            self.type1.layer.masksToBounds = true
-//            self.type1.text = response.types[0].rawValue.uppercased()
-//            self.type1.backgroundColor = colorDict[response.types[0]]
-//            self.type1.tintColor = .white
-//            self.type1.layer.cornerRadius = 8
-//            self.type1.layer.borderWidth = 1
-//            self.type1.layer.borderColor = UIColor.white.cgColor
-
-
-            self.dexEntryText.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
-            self.dexEntryText.layer.cornerRadius = 8
-            self.dexEntryText.backgroundColor = colorDict[firstType]
-
 
             //setting up the main pokemon image w/ styling
             if let imageURL = URL(string: response.sprite) {

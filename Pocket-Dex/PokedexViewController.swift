@@ -30,8 +30,18 @@ class PokedexViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        self.navigationController?.navigationBar.scrollEdgeAppearance?.backgroundColor = .red
-        self.navigationController?.navigationBar.standardAppearance.backgroundColor = .red
+        self.navigationController?.navigationBar.scrollEdgeAppearance?.backgroundColor = .clear
+        self.navigationController?.navigationBar.standardAppearance.backgroundColor = .clear
+//        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+//        UINavigationBar.appearance().shadowImage = UIImage()
+//        UINavigationBar.appearance().isTranslucent = true
+        
+//        //ios 13 and after
+//        let appearance = UINavigationBarAppearance()
+//        appearance.configureWithTransparentBackground()
+//        UINavigationBar.appearance().standardAppearance = appearance
+//        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+
         
         let url = URL(string: "https://pokeapi.co/api/v2/pokedex/1/")!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 30)

@@ -64,6 +64,17 @@ let colorDict: [PokeType: UIColor] = [
     
 ]
 
+func styleDexNumber(num: Int) -> String {
+    switch num {
+    case 0..<10:
+        return "#00\(num)"
+    case 10..<100:
+        return "#0\(num)"
+    default:
+        return "#\(num)"
+    }
+}
+
 extension UIColor {
     static var normal: UIColor {return UIColor(red: 160/255, green: 158/255, blue: 113/255, alpha: 1.0)}
     static var fire: UIColor {return UIColor(red: 251/255, green: 117/255, blue: 52/255, alpha: 1.0)}

@@ -248,7 +248,7 @@
                                                                     </stackView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" verticalCompressionResistancePriority="1000" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NwY-91-E9T" customClass="PaddingLabel" customModule="Pocket_Dex" customModuleProvider="target">
                                                                         <rect key="frame" x="20.5" y="613" width="373" height="101.5"/>
-                                                                        <color key="backgroundColor" red="0.13769659400000001" green="0.14745709300000001" blue="0.2134354711" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerc consequat.</string>
                                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -346,6 +346,7 @@
                     <connections>
                         <outlet property="abilitiesView" destination="yTF-ik-Fry" id="W4E-Tw-wIv"/>
                         <outlet property="dexEntryText" destination="NwY-91-E9T" id="kw3-PL-Gnz"/>
+                        <outlet property="dexNumber" destination="aAS-z0-cWL" id="FwC-Qs-7bV"/>
                         <outlet property="pokeImage" destination="G8Y-OM-Cw1" id="QFh-7P-a14"/>
                         <outlet property="pokeball" destination="8iX-eR-R9Q" id="drC-tq-jVZ"/>
                         <outlet property="topView" destination="EOM-IM-HMG" id="9az-2i-4Bu"/>
