@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		041986702863E57D00A634F6 /* PaddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0419866F2863E57D00A634F6 /* PaddedLabel.swift */; };
+		042A52562869693C00A74034 /* PokeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A52552869693C00A74034 /* PokeDetailVC.swift */; };
+		042A525828696AEF00A74034 /* MainDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A525728696AEF00A74034 /* MainDetailCell.swift */; };
+		042A525A28696B1700A74034 /* StatsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A525928696B1700A74034 /* StatsCell.swift */; };
+		042A525C28696B2300A74034 /* BreedingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A525B28696B2300A74034 /* BreedingCell.swift */; };
+		042A525E28696B4800A74034 /* FormsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A525D28696B4800A74034 /* FormsCell.swift */; };
 		04440D46286291D500A2DF05 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04440D45286291D400A2DF05 /* APIHelper.swift */; };
 		044ACCB0286528360015F066 /* TypeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044ACCAF286528360015F066 /* TypeButtonView.swift */; };
 		044ACCB22865284D0015F066 /* TypeButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044ACCB12865284D0015F066 /* TypeButtonView.xib */; };
@@ -30,6 +35,11 @@
 
 /* Begin PBXFileReference section */
 		0419866F2863E57D00A634F6 /* PaddedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedLabel.swift; sourceTree = "<group>"; };
+		042A52552869693C00A74034 /* PokeDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PokeDetailVC.swift; path = ../Components/AbilitiesComponent/PokeDetailVC.swift; sourceTree = "<group>"; };
+		042A525728696AEF00A74034 /* MainDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailCell.swift; sourceTree = "<group>"; };
+		042A525928696B1700A74034 /* StatsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsCell.swift; sourceTree = "<group>"; };
+		042A525B28696B2300A74034 /* BreedingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedingCell.swift; sourceTree = "<group>"; };
+		042A525D28696B4800A74034 /* FormsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormsCell.swift; sourceTree = "<group>"; };
 		04440D45286291D400A2DF05 /* APIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
 		044ACCAF286528360015F066 /* TypeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeButtonView.swift; sourceTree = "<group>"; };
 		044ACCB12865284D0015F066 /* TypeButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TypeButtonView.xib; sourceTree = "<group>"; };
@@ -77,6 +87,7 @@
 			children = (
 				048CE18128680AC9007BEBEF /* MoveSetVC.swift */,
 				04C66715285EE092001471D4 /* PokedetailVC.swift */,
+				042A52552869693C00A74034 /* PokeDetailVC.swift */,
 				2DB49D662811290A00EA28FF /* PokedexViewController.swift */,
 			);
 			path = ViewControllers;
@@ -97,6 +108,10 @@
 			isa = PBXGroup;
 			children = (
 				04A3971A286832AC00B5F2A6 /* MoveCell.swift */,
+				042A525728696AEF00A74034 /* MainDetailCell.swift */,
+				042A525928696B1700A74034 /* StatsCell.swift */,
+				042A525B28696B2300A74034 /* BreedingCell.swift */,
+				042A525D28696B4800A74034 /* FormsCell.swift */,
 				04820BA7286922920019DB50 /* MachineTutorCell.swift */,
 			);
 			path = TableViewCells;
@@ -241,14 +256,19 @@
 				04440D46286291D500A2DF05 /* APIHelper.swift in Sources */,
 				044ACCB0286528360015F066 /* TypeButtonView.swift in Sources */,
 				2D083B642865641C00E36EA8 /* AbilitiesView.swift in Sources */,
+				042A525C28696B2300A74034 /* BreedingCell.swift in Sources */,
 				04A3971B286832AC00B5F2A6 /* MoveCell.swift in Sources */,
 				04820BA8286922920019DB50 /* MachineTutorCell.swift in Sources */,
 				04C66710285E3FC1001471D4 /* Reference.swift in Sources */,
+				042A52562869693C00A74034 /* PokeDetailVC.swift in Sources */,
+				042A525A28696B1700A74034 /* StatsCell.swift in Sources */,
 				048CE18228680AC9007BEBEF /* MoveSetVC.swift in Sources */,
 				041986702863E57D00A634F6 /* PaddedLabel.swift in Sources */,
 				04C65DDB2867C84500342699 /* StatBar.swift in Sources */,
+				042A525828696AEF00A74034 /* MainDetailCell.swift in Sources */,
 				2DB49D652811290A00EA28FF /* SceneDelegate.swift in Sources */,
 				04C66716285EE092001471D4 /* PokedetailVC.swift in Sources */,
+				042A525E28696B4800A74034 /* FormsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -42,7 +42,7 @@ class PokedetailVC: UIViewController {
         navigationItem.title = pokename.capitalized
         abilitiesView.layer.cornerRadius = 20;
         abilitiesView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        pokeball.transform = pokeball.transform.rotated(by: .pi / 6)
+        //pokeball.transform = pokeball.transform.rotated(by: .pi / 6)
 
         fetchPokemonSpecies(self.pokemonSpeciesEndpointURL, successCallBack: {response in
             guard let response = response else {
