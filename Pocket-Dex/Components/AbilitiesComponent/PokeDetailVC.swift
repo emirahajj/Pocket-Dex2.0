@@ -10,12 +10,30 @@ import UIKit
 class PokeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MainDetailCell", for: indexPath) as? MainDetailCell
-        return cell!
+        switch indexPath.row{
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MainDetailCell", for: indexPath) as? MainDetailCell
+            
+            return cell!
+        default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "StatsCell", for: indexPath) as? StatsCell
+            
+            return cell!
+        }
+
+    }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        if indexPath.row == 0 {
+//        } else {
+//            cell.contentView.layer.masksToBounds = false
+//        }
+        cell.contentView.layer.masksToBounds = true
+
+        
     }
     
 
