@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TypeButtonView: UIView {
+@IBDesignable class TypeButtonView: UIView {
     
 
     @IBOutlet weak var typeName: PaddingLabel!
@@ -28,7 +28,8 @@ class TypeButtonView: UIView {
     func customInit() {
         contentView = loadViewFromNib(nibName: "TypeButtonView")
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        layer.backgroundColor = UIColor.red.cgColor
+        contentView.backgroundColor = .cyan
+        //.layer.backgroundColor = UIColor.red.cgColor
         layer.cornerRadius = 6
         layer.shadowOpacity = 1.0
         layer.shadowColor = UIColor.black.cgColor
@@ -40,7 +41,7 @@ class TypeButtonView: UIView {
     
     func configureImageAndText(type : PokeType){
         typeName.text = type.rawValue.uppercased()
-        layer.backgroundColor = colorDict[type]?.cgColor
+        contentView.layer.backgroundColor = colorDict[type]?.cgColor
 
 
         //contentView.layer.borderWidth = 1

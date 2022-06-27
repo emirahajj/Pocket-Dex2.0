@@ -31,12 +31,12 @@ import UIKit
     func customInit() {
         contentView = loadViewFromNib(nibName: "StatBar")
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-//        layer.backgroundColor = UIColor.red.cgColor
+        contentView.layer.backgroundColor = UIColor.black.cgColor
         layer.cornerRadius = 7
         layer.shadowOpacity = 1.0
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOffset = CGSize(width: 2, height: 2)
-//        layer.masksToBounds = true
+        layer.masksToBounds = true
         contentView.frame = self.bounds
         addSubview(contentView)
     }
@@ -54,7 +54,7 @@ import UIKit
         statNameLabel.text = stat
         statNameLabel.textColor = .white
         statAmountLabel.textColor = .white
-        layer.backgroundColor = colorDict[type]?.cgColor
+        contentView.layer.backgroundColor = colorDict[type]?.cgColor
 
         self.statAmountLabel.font = UIFont.boldSystemFont(ofSize: 17)
         self.statNameLabel.layer.opacity = 0.9

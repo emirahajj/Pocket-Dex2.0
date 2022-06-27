@@ -30,7 +30,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="714.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.25" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#002" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAS-z0-cWL">
-                                                                <rect key="frame" x="10.5" y="33" width="78.5" height="36"/>
+                                                                <rect key="frame" x="108" y="172.5" width="78.5" height="36"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -45,27 +45,27 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="714.5"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleAspectFill" verticalCompressionResistancePriority="250" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="lCi-fh-QWg">
-                                                                        <rect key="frame" x="10.5" y="0.0" width="393" height="359.5"/>
+                                                                        <rect key="frame" x="20.5" y="0.0" width="373" height="359.5"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sYm-17-BrK">
-                                                                                <rect key="frame" x="0.0" y="33" width="165.5" height="293.5"/>
+                                                                                <rect key="frame" x="0.0" y="43" width="166" height="273.5"/>
                                                                                 <subviews>
                                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G8Y-OM-Cw1">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="165.5" height="165.5"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="166" height="165.5"/>
                                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="width" secondItem="G8Y-OM-Cw1" secondAttribute="height" multiplier="1:1" id="kL5-eJ-J40"/>
                                                                                         </constraints>
                                                                                     </imageView>
-                                                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2vl-fM-b6s" userLabel="Types Stack View">
-                                                                                        <rect key="frame" x="3.5" y="165.5" width="158.5" height="128"/>
+                                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2vl-fM-b6s" userLabel="Types Stack View">
+                                                                                        <rect key="frame" x="36" y="165.5" width="94" height="108"/>
                                                                                         <subviews>
                                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sLB-X1-Nxz" userLabel="Type1" customClass="TypeButtonView" customModule="Pocket_Dex" customModuleProvider="target">
-                                                                                                <rect key="frame" x="0.0" y="0.0" width="72.5" height="128"/>
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="94" height="50"/>
                                                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                                             </view>
                                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VZv-8H-eXy" customClass="TypeButtonView" customModule="Pocket_Dex" customModuleProvider="target">
-                                                                                                <rect key="frame" x="80.5" y="0.0" width="78" height="128"/>
+                                                                                                <rect key="frame" x="0.0" y="58" width="94" height="50"/>
                                                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                                             </view>
                                                                                         </subviews>
@@ -79,39 +79,39 @@
                                                                                 </constraints>
                                                                             </stackView>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="IUs-Zk-VLh">
-                                                                                <rect key="frame" x="180.5" y="0.0" width="212.5" height="359.5"/>
+                                                                                <rect key="frame" x="181" y="0.0" width="192" height="359.5"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Base Stats" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYs-4T-pfR">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="212.5" height="24.5"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="192" height="24.5"/>
                                                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
                                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                         <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     </label>
                                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="uPS-dT-zUJ">
-                                                                                        <rect key="frame" x="0.0" y="34.5" width="212.5" height="325"/>
+                                                                                        <rect key="frame" x="0.0" y="34.5" width="192" height="325"/>
                                                                                         <subviews>
                                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oXl-YX-WGh" customClass="StatBar" customModule="Pocket_Dex" customModuleProvider="target">
-                                                                                                <rect key="frame" x="0.0" y="0.0" width="212.5" height="50"/>
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="192" height="50"/>
                                                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                                             </view>
                                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="auR-06-tin" customClass="StatBar" customModule="Pocket_Dex" customModuleProvider="target">
-                                                                                                <rect key="frame" x="0.0" y="55" width="212.5" height="50"/>
+                                                                                                <rect key="frame" x="0.0" y="55" width="192" height="50"/>
                                                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                                             </view>
                                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IiR-0W-3im" customClass="StatBar" customModule="Pocket_Dex" customModuleProvider="target">
-                                                                                                <rect key="frame" x="0.0" y="110" width="212.5" height="50"/>
+                                                                                                <rect key="frame" x="0.0" y="110" width="192" height="50"/>
                                                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                                             </view>
                                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tDT-gh-LSk" customClass="StatBar" customModule="Pocket_Dex" customModuleProvider="target">
-                                                                                                <rect key="frame" x="0.0" y="165" width="212.5" height="50"/>
+                                                                                                <rect key="frame" x="0.0" y="165" width="192" height="50"/>
                                                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                                             </view>
                                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cJb-jc-KCs" customClass="StatBar" customModule="Pocket_Dex" customModuleProvider="target">
-                                                                                                <rect key="frame" x="0.0" y="220" width="212.5" height="50"/>
+                                                                                                <rect key="frame" x="0.0" y="220" width="192" height="50"/>
                                                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                                             </view>
                                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PaV-ez-PwH" customClass="StatBar" customModule="Pocket_Dex" customModuleProvider="target">
-                                                                                                <rect key="frame" x="0.0" y="275" width="212.5" height="50"/>
+                                                                                                <rect key="frame" x="0.0" y="275" width="192" height="50"/>
                                                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                                             </view>
                                                                                         </subviews>
@@ -155,9 +155,9 @@
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstItem="pUO-9C-AFp" firstAttribute="leading" secondItem="EOM-IM-HMG" secondAttribute="leading" id="AiV-jK-Re7"/>
-                                                            <constraint firstItem="aAS-z0-cWL" firstAttribute="leading" secondItem="G8Y-OM-Cw1" secondAttribute="leading" id="Dtc-2C-n75"/>
+                                                            <constraint firstItem="aAS-z0-cWL" firstAttribute="trailing" secondItem="G8Y-OM-Cw1" secondAttribute="trailing" id="Dtc-2C-n75"/>
                                                             <constraint firstAttribute="trailing" secondItem="pUO-9C-AFp" secondAttribute="trailing" id="NHV-GA-y9a"/>
-                                                            <constraint firstItem="aAS-z0-cWL" firstAttribute="top" secondItem="G8Y-OM-Cw1" secondAttribute="top" id="cWc-Up-tOd"/>
+                                                            <constraint firstItem="aAS-z0-cWL" firstAttribute="bottom" secondItem="G8Y-OM-Cw1" secondAttribute="bottom" id="cWc-Up-tOd"/>
                                                             <constraint firstItem="pUO-9C-AFp" firstAttribute="top" secondItem="EOM-IM-HMG" secondAttribute="top" id="ioI-u4-S8x"/>
                                                             <constraint firstAttribute="bottom" secondItem="pUO-9C-AFp" secondAttribute="bottom" id="uWu-P5-oml"/>
                                                         </constraints>
@@ -165,12 +165,11 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yTF-ik-Fry" userLabel="MoveView">
                                                         <rect key="frame" x="0.0" y="754.5" width="414" height="435"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j3m-Kw-S4s">
-                                                                <rect key="frame" x="142" y="142" width="75" height="35"/>
+                                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W0U-Uk-0P0" customClass="AbilitiesView" customModule="Pocket_Dex" customModuleProvider="target">
+                                                                <rect key="frame" x="23" y="125" width="240" height="128"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                                            </button>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                            </view>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
@@ -190,7 +189,7 @@
                                             <constraint firstItem="uUg-0a-d2D" firstAttribute="top" secondItem="szz-Rj-vhO" secondAttribute="top" id="4O2-tL-Aq0"/>
                                             <constraint firstAttribute="trailing" secondItem="uUg-0a-d2D" secondAttribute="trailing" id="8cD-rK-NKG"/>
                                             <constraint firstItem="uUg-0a-d2D" firstAttribute="leading" secondItem="szz-Rj-vhO" secondAttribute="leading" id="9ch-Fh-Q2W"/>
-                                            <constraint firstItem="lCi-fh-QWg" firstAttribute="width" secondItem="szz-Rj-vhO" secondAttribute="width" multiplier="0.95" id="ZrA-ta-rDi"/>
+                                            <constraint firstItem="lCi-fh-QWg" firstAttribute="width" secondItem="szz-Rj-vhO" secondAttribute="width" multiplier="0.9" id="ZrA-ta-rDi"/>
                                             <constraint firstItem="NwY-91-E9T" firstAttribute="width" secondItem="szz-Rj-vhO" secondAttribute="width" multiplier="0.9" id="aGL-Q3-FA8"/>
                                             <constraint firstItem="8iX-eR-R9Q" firstAttribute="bottom" secondItem="EOM-IM-HMG" secondAttribute="bottom" id="cnW-yX-V3Q"/>
                                             <constraint firstItem="8iX-eR-R9Q" firstAttribute="width" secondItem="szz-Rj-vhO" secondAttribute="width" id="dI3-aL-1uB"/>
@@ -248,7 +247,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="My1-Jd-UGh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1142" y="3235"/>
+            <point key="canvasLocation" x="-1142.0289855072465" y="3234.375"/>
         </scene>
         <!--Moveset-->
         <scene sceneID="Sgn-3H-Qdp">
