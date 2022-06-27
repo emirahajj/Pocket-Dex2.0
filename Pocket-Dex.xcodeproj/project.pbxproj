@@ -17,7 +17,7 @@
 		04C65DD92867C82900342699 /* StatBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C65DD82867C82900342699 /* StatBar.xib */; };
 		04C65DDB2867C84500342699 /* StatBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C65DDA2867C84500342699 /* StatBar.swift */; };
 		04C66710285E3FC1001471D4 /* Reference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6670F285E3FC1001471D4 /* Reference.swift */; };
-		04C66716285EE092001471D4 /* PokemonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C66715285EE092001471D4 /* PokemonDetailViewController.swift */; };
+		04C66716285EE092001471D4 /* PokedetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C66715285EE092001471D4 /* PokedetailVC.swift */; };
 		2D083B642865641C00E36EA8 /* AbilitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D083B632865641C00E36EA8 /* AbilitiesView.swift */; };
 		2D083B662865642F00E36EA8 /* AbilitiesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D083B652865642F00E36EA8 /* AbilitiesView.xib */; };
 		2DB49D632811290A00EA28FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB49D622811290A00EA28FF /* AppDelegate.swift */; };
@@ -39,7 +39,7 @@
 		04C65DD82867C82900342699 /* StatBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatBar.xib; sourceTree = "<group>"; };
 		04C65DDA2867C84500342699 /* StatBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatBar.swift; sourceTree = "<group>"; };
 		04C6670F285E3FC1001471D4 /* Reference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reference.swift; sourceTree = "<group>"; };
-		04C66715285EE092001471D4 /* PokemonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailViewController.swift; sourceTree = "<group>"; };
+		04C66715285EE092001471D4 /* PokedetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedetailVC.swift; sourceTree = "<group>"; };
 		2D083B632865641C00E36EA8 /* AbilitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilitiesView.swift; sourceTree = "<group>"; };
 		2D083B652865642F00E36EA8 /* AbilitiesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AbilitiesView.xib; sourceTree = "<group>"; };
 		2DB49D5F2811290A00EA28FF /* Pocket-Dex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pocket-Dex.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,7 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				048CE18128680AC9007BEBEF /* MoveSetVC.swift */,
-				04C66715285EE092001471D4 /* PokemonDetailViewController.swift */,
+				04C66715285EE092001471D4 /* PokedetailVC.swift */,
 				2DB49D662811290A00EA28FF /* PokedexViewController.swift */,
 			);
 			path = ViewControllers;
@@ -248,7 +248,7 @@
 				041986702863E57D00A634F6 /* PaddedLabel.swift in Sources */,
 				04C65DDB2867C84500342699 /* StatBar.swift in Sources */,
 				2DB49D652811290A00EA28FF /* SceneDelegate.swift in Sources */,
-				04C66716285EE092001471D4 /* PokemonDetailViewController.swift in Sources */,
+				04C66716285EE092001471D4 /* PokedetailVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

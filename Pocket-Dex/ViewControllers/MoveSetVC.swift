@@ -10,14 +10,34 @@ import UIKit
 
 class MoveSetVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return levelUpMoves.count
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            return levelUpMoves.count
+        case 1:
+            return machineMoves.count
+        default:
+            return tutorMoves.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MoveCell", for: indexPath) as? MoveCell
-        cell?.levelLabel.text = "Lv. \(levelUpMoves[indexPath.row].levelLearned)"
-        cell?.nameLabel.text = levelUpMoves[indexPath.row].name.replacingOccurrences(of: "-", with: " ").capitalized
-        return cell!
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            let levelUpCell = tableView.dequeueReusableCell(withIdentifier: "MoveCell", for: indexPath) as? MoveCell
+            levelUpCell?.levelLabel.text = "Lv. \(levelUpMoves[indexPath.row].levelLearned)"
+            levelUpCell?.nameLabel.text = levelUpMoves[indexPath.row].name.replacingOccurrences(of: "-", with: " ").capitalized
+            return levelUpCell!
+        case 1:
+            let machineTutorCell = tableView.dequeueReusableCell(withIdentifier: "MachineTutorCell", for: indexPath) as? MachineTutorCell
+            machineTutorCell?.moveLabel.text = machineMoves[indexPath.row].name
+            return machineTutorCell!
+        default:
+            let machineTutorCell = tableView.dequeueReusableCell(withIdentifier: "MachineTutorCell", for: indexPath) as? MachineTutorCell
+            machineTutorCell?.moveLabel.text = tutorMoves[indexPath.row].name
+            return machineTutorCell!
+        }
+        
+       
     }
     
     
@@ -35,7 +55,7 @@ class MoveSetVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(levelUpMoves)
+        print(machineMoves)
         filteredLevel = levelUpMoves.filter({$0.versionGroup == "red-blue"}).sorted(by: {$0.levelLearned < $1.levelLearned})
         //print(levelUpMoves.filter({$0.versionGroup == "red-blue"}))
 //        print(pokemon)
@@ -53,14 +73,17 @@ class MoveSetVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         case 0:
             //level up
             print("level up")
+            moveTableView.reloadData()
             return
         case 1:
             //machine
             print("machine")
+            moveTableView.reloadData()
             return
         default:
             //tutor
             print("tutor")
+            moveTableView.reloadData()
             return
         }
     }

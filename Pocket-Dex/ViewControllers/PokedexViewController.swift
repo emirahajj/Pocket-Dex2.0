@@ -95,7 +95,7 @@ class PokedexViewController: UIViewController, UITableViewDelegate, UITableViewD
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let destination = segue.destination as? PokemonDetailViewController else {return}
+        guard let destination = segue.destination as? PokedetailVC else {return}
         print("dsd")
         guard let sender = sender as? PokeCell else {return}
         

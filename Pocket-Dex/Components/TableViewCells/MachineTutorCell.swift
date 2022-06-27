@@ -9,6 +9,8 @@ import UIKit
 
 class MachineTutorCell: UITableViewCell {
 
+    @IBOutlet weak var moveLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

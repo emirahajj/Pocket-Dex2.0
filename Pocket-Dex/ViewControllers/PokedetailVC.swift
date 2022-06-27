@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PokemonDetailViewController: UIViewController {
+class PokedetailVC: UIViewController {
     
     var pokename: String = ""
     var pokemon: Pokemon!
