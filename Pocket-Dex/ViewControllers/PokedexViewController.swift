@@ -91,11 +91,11 @@ class PokedexViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
-        performSegue(withIdentifier: "toPokeDetail", sender: tableView.cellForRow(at:indexPath))
+        performSegue(withIdentifier: "toNewDetail", sender: tableView.cellForRow(at:indexPath))
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let destination = segue.destination as? PokedetailVC else {return}
+        guard let destination = segue.destination as? PokeDetailVC else {return}
         print("dsd")
         guard let sender = sender as? PokeCell else {return}
         

@@ -17,6 +17,12 @@ class MainDetailCell: UITableViewCell {
     @IBOutlet weak var dexNumber: UILabel!
     @IBOutlet weak var dexText: UILabel!
     
+    @IBOutlet weak var type1: UIImageView!
+    
+    @IBOutlet weak var type2: UIImageView!
+    
+    @IBOutlet weak var typeStackView: UIStackView!
+    
 //    @IBOutlet weak var pokeball: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,6 +36,24 @@ class MainDetailCell: UITableViewCell {
         
 //        contentView.backgroundColor = .clear
         contentView.layer.cornerRadius = 30
+        
+        
+        //image configuration
+        pokeImage.layer.magnificationFilter = CALayerContentsFilter.nearest
+        pokeImage.layer.shadowOpacity = 1.0
+        pokeImage.layer.shadowRadius = 10
+        pokeImage.layer.shadowColor = UIColor.black.cgColor
+        pokeImage.layer.shadowOffset = CGSize(width: 2, height: 2)
+        
+        //type config
+        type1.layer.borderWidth = 0.6
+        type1.layer.borderColor = UIColor.white.cgColor
+
+
+        
+        type2.layer.borderWidth = 0.6
+        type2.layer.borderColor = UIColor.white.cgColor
+
 
 
     }

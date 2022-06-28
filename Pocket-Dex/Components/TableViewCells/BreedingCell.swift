@@ -9,6 +9,8 @@ import UIKit
 
 class BreedingCell: UITableViewCell {
 
+    @IBOutlet weak var genderView: GenderRatioView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

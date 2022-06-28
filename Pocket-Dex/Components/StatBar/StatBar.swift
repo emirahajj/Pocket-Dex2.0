@@ -54,7 +54,7 @@ import UIKit
         statNameLabel.text = stat
         statNameLabel.textColor = .white
         statAmountLabel.textColor = .white
-        contentView.layer.backgroundColor = colorDict[type]?.cgColor
+        contentView.layer.backgroundColor = colorDict[type]?.adjust(by: -20)?.cgColor
 
         self.statAmountLabel.font = UIFont.boldSystemFont(ofSize: 17)
         self.statNameLabel.layer.opacity = 0.9
