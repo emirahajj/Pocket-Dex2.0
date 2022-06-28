@@ -10,20 +10,13 @@ import UIKit
 class MainDetailCell: UITableViewCell {
 
     @IBOutlet weak var pokeImage: UIImageView!
-    
-    @IBOutlet weak var wrapperView: UIView! //shadow on this one
-    //    @IBOutlet weak var type2: UIImageView!
-//    @IBOutlet weak var type1: UIImageView!
     @IBOutlet weak var dexNumber: UILabel!
     @IBOutlet weak var dexText: UILabel!
-    
     @IBOutlet weak var type1: UIImageView!
-    
     @IBOutlet weak var type2: UIImageView!
-    
     @IBOutlet weak var typeStackView: UIStackView!
+    @IBOutlet weak var sizeView: SizeView!
     
-//    @IBOutlet weak var pokeball: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -66,7 +59,7 @@ class MainDetailCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        let margins = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
+        let margins = UIEdgeInsets(top:0, left: 0, bottom: 20, right: 0)
         contentView.frame = contentView.frame.inset(by: margins)
     }
 

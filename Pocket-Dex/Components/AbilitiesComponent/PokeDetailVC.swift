@@ -18,13 +18,15 @@ class PokeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     var pokemonSpeciesEndpointURL: String {
         return "https://pokeapi.co/api/v2/pokemon-species/\(pokename)"
     }
-   
+    @IBOutlet weak var moveSetButton: UIBarButtonItem!
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.title = pokename.capitalized
+        tableView.separatorColor = .clear
 
 
         // Do any additional setup after loading the view.
@@ -52,7 +54,8 @@ class PokeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
                 return
             }
             self.pokemon = response
-            self.view.backgroundColor = colorDict[self.pokemon!.types[0]]
+            self.view.backgroundColor = colorDict[self.pokemon!.types[0]]?.adjust(by: -30)
+            self.tableView.backgroundColor = colorDict[self.pokemon!.types[0]]?.adjust(by: -30)
             self.tableView.reloadData()
             
         }, errorCallBack: {error in
@@ -64,6 +67,9 @@ class PokeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         tableView.delegate = self
         tableView.dataSource = self
         tableView.reloadData()
+    }
+    @IBAction func moveSetPressed(_ sender: Any) {
+        performSegue(withIdentifier: "toMoves", sender: self)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -91,6 +97,7 @@ class PokeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             }
             let dexEntries = pokemonSpecies.dexEntries.filter{$0.language == "en"}
             cell?.dexText.text = dexEntries[0].text.replacingOccurrences(of: "\\s", with: " ", options: .regularExpression)
+            //cell?.dexText.sha
 
             let typey1 = pokemon?.types[0].rawValue
             cell?.type1.image = UIImage(named: typey1!)
@@ -106,8 +113,11 @@ class PokeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
                 cell?.type2.layer.cornerRadius = 5
 
             }
+            
+            cell?.sizeView.weight.tintColor = colorDict[self.pokemon!.types[0]]?.adjust(by: 0)
+            cell?.sizeView.ruler.tintColor = colorDict[self.pokemon!.types[0]]?.adjust(by: 0)
 //            let type2 = pokemon?.types[0].rawValue
-            cell?.contentView.backgroundColor = colorDict[self.pokemon!.types[0]]
+            cell?.contentView.backgroundColor = colorDict[self.pokemon!.types[0]]?.adjust(by: -30)
             
             
             
@@ -129,10 +139,13 @@ class PokeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
                 let nameLookup = StatLookup[statOrder[i]]! //hp
 
                 let amount = (pkmn.stats[nameLookup])!
-
                 cell?.statBars[i].configureInfo(stat: statOrder[i], amount: amount, type: pkmn.types.first!)
             }
-        
+            
+//            cell?.sizeView.heightLabel.text = String(pkmn.height)
+//            cell?.sizeView.weightLabel.text = String(pkmn.weight)
+//            cell?.sizeView.weight.tintColor = colorDict[pkmn.types[0]]
+//            cell?.sizeView.ruler.tintColor = colorDict[pkmn.types[0]]
 
             
             return cell!
@@ -164,14 +177,14 @@ class PokeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+        guard let destination = segue.destination as? MoveSetVC else {return}
+        print(pokemon!.machineMoves)
+        destination.machineMoves = pokemon!.machineMoves
+        destination.tutorMoves = pokemon!.tutorMoves
+        destination.levelUpMoves = pokemon!.levelUpMoves
+        
     }
-    */
 
 }

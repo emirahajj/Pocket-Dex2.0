@@ -12,6 +12,8 @@ import UIKit
     @IBOutlet weak var heightLabel: UILabel!
     @IBOutlet weak var weightLabel: UILabel!
     
+    @IBOutlet weak var weight: UIImageView!
+    @IBOutlet weak var ruler: UIImageView!
     @IBOutlet var contentView: UIView!
     /*
     // Only override draw() if you perform custom drawing.
@@ -35,7 +37,8 @@ import UIKit
     func customInit(){
         contentView = loadViewFromNib(nibName: "SizeView")
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        contentView.layer.backgroundColor = UIColor.clear.cgColor
+        //contentView.layer.backgroundColor = UIColor.clear.cgColor
+        ruler.transform = ruler.transform.rotated(by: .pi / 2)
 
         contentView.frame = self.bounds
         addSubview(contentView)
