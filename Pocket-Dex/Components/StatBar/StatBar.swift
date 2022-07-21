@@ -52,13 +52,18 @@ import UIKit
     func configureInfo(stat: String, amount: Int, type: PokeType){
         statAmountLabel.text = String(amount)
         statNameLabel.text = stat
-        statNameLabel.textColor = .white
-        statAmountLabel.textColor = .white
+        statNameLabel.textColor = colorDict[type]?.adjust(by: -30)
+        statAmountLabel.textColor = colorDict[type]?.adjust(by: -30)
+        statAmountLabel.shadowColor = colorDict[type]?.adjust(by: 30)
+        statAmountLabel.layer.shadowOpacity = 0.5
+        statAmountLabel.layer.shadowRadius = 1
+        statAmountLabel.layer.shadowColor = UIColor.white.cgColor
+        statAmountLabel.layer.shadowOffset = CGSize(width: 1, height: 1)
         contentView.layer.backgroundColor = colorDict[type]?.cgColor
 
-        self.statAmountLabel.font = UIFont.boldSystemFont(ofSize: 17)
-        self.statNameLabel.layer.opacity = 0.9
-        self.stackView.spacing = CGFloat(amount/2)
+//        self.statAmountLabel.font = UIFont.boldSystemFont(ofSize: 17)
+//        self.statNameLabel.layer.opacity = 0.5
+        self.stackView.spacing = CGFloat(amount/2-30)
 
     }
     /*

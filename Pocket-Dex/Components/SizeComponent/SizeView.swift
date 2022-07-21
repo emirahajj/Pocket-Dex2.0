@@ -1,16 +1,19 @@
 //
-//  AbilitiesView.swift
+//  SizeView.swift
 //  Pocket-Dex
 //
-//  Created by Emira Hajj on 6/23/22.
+//  Created by Emira Shano on 6/27/22.
 //
 
 import UIKit
 
-@IBDesignable class AbilitiesView: UIView {
+@IBDesignable class SizeView: UIView {
 
-    @IBOutlet weak var ability2Lbael: UILabel!
-    @IBOutlet weak var ability1Label: UILabel!
+    @IBOutlet weak var heightLabel: UILabel!
+    @IBOutlet weak var weightLabel: UILabel!
+    
+    @IBOutlet weak var weight: UIImageView!
+    @IBOutlet weak var ruler: UIImageView!
     @IBOutlet var contentView: UIView!
     /*
     // Only override draw() if you perform custom drawing.
@@ -31,15 +34,12 @@ import UIKit
         customInit()
     }
     
-    func customInit() {
-        contentView = loadViewFromNib(nibName: "AbilitiesView")
+    func customInit(){
+        contentView = loadViewFromNib(nibName: "SizeView")
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        contentView.layer.backgroundColor = UIColor.clear.cgColor
-//        layer.cornerRadius = 7
-//        layer.shadowOpacity = 1.0
-//        layer.shadowColor = UIColor.black.cgColor
-//        layer.shadowOffset = CGSize(width: 2, height: 2)
-//        layer.masksToBounds = true
+        //contentView.layer.backgroundColor = UIColor.clear.cgColor
+        ruler.transform = ruler.transform.rotated(by: .pi / 2)
+
         contentView.frame = self.bounds
         addSubview(contentView)
     }
@@ -50,6 +50,5 @@ import UIKit
         let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         return view
     }
-
 
 }

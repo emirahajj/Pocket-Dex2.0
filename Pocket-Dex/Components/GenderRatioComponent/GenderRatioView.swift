@@ -1,17 +1,19 @@
 //
-//  AbilitiesView.swift
+//  GenderRatioView.swift
 //  Pocket-Dex
 //
-//  Created by Emira Hajj on 6/23/22.
+//  Created by Emira Shano on 6/27/22.
 //
 
 import UIKit
 
-@IBDesignable class AbilitiesView: UIView {
+@IBDesignable class GenderRatioView: UIView {
 
-    @IBOutlet weak var ability2Lbael: UILabel!
-    @IBOutlet weak var ability1Label: UILabel!
     @IBOutlet var contentView: UIView!
+    @IBOutlet weak var progressView: UIProgressView!
+    @IBOutlet weak var femaleAmount: UILabel!
+    @IBOutlet weak var maleAmount: UILabel!
+    
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -20,26 +22,21 @@ import UIKit
     }
     */
     
-    //initializer for code
+    //initializer for creating component programmatically
     override init(frame: CGRect) {
         super.init(frame: frame)
         customInit()
     }
-    //storyboard initializer
+    //initializer for creating component in the IB
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         customInit()
     }
     
     func customInit() {
-        contentView = loadViewFromNib(nibName: "AbilitiesView")
+        contentView = loadViewFromNib(nibName: "GenderRatioView")
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         contentView.layer.backgroundColor = UIColor.clear.cgColor
-//        layer.cornerRadius = 7
-//        layer.shadowOpacity = 1.0
-//        layer.shadowColor = UIColor.black.cgColor
-//        layer.shadowOffset = CGSize(width: 2, height: 2)
-//        layer.masksToBounds = true
         contentView.frame = self.bounds
         addSubview(contentView)
     }
@@ -50,6 +47,5 @@ import UIKit
         let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         return view
     }
-
 
 }
