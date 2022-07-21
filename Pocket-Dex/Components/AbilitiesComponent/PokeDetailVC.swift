@@ -79,12 +79,17 @@ class PokeDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let pkmn = pokemon else {
+            let cell = (tableView.dequeueReusableCell(withIdentifier: "MainDetailCell", for: indexPath) as? MainDetailCell)!
+
             //perhaps creaete a buffer one here
-            return UITableViewCell()
+            return cell
         }
         guard let pkmnSpecies = pokemonSpecies else {
             //perhaps creaete a buffer one here
-            return UITableViewCell()
+            let cell = (tableView.dequeueReusableCell(withIdentifier: "MainDetailCell", for: indexPath) as? MainDetailCell)!
+
+            //perhaps creaete a buffer one here
+            return cell
         }
         switch indexPath.row{
         case 0:

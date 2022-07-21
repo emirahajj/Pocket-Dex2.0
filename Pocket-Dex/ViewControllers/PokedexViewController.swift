@@ -17,26 +17,42 @@ class PokeCell: UITableViewCell {
     @IBOutlet weak var cellLabel: UILabel!
 }
 
+extension UserDefaults {
+    static func exists(key: String) -> Bool {
+        return UserDefaults.standard.object(forKey: key) != nil
+    }
+
+}
+
 //CELL IMAGES https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/800.png
 
 
 class PokedexViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet var contentView: UIView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     var dictionary = [[String:Any]]()
+    var isMenuActive = false
+    var defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        self.navigationController?.navigationBar.scrollEdgeAppearance?.backgroundColor = .clear
-        self.navigationController?.navigationBar.standardAppearance.backgroundColor = .clear
+        
+        if !UserDefaults.exists(key: "versionGroup"){
+            defaults.set("red", forKey: "versionGroup")
+        } else {
+            defaults.set("red", forKey: "versionGroup")
+        }
+//        self.navigationController?.navigationBar.scrollEdgeAppearance?.backgroundColor = .clear
+//        self.navigationController?.navigationBar.standardAppearance.backgroundColor = .clear
 //        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
 //        UINavigationBar.appearance().shadowImage = UIImage()
 //        UINavigationBar.appearance().isTranslucent = true
 //        self.tabBarController?.tabBar.itemPositioning = .centered
-        
+//
 //        //ios 13 and after
 //        let appearance = UINavigationBarAppearance()
 //        appearance.configureWithTransparentBackground()
@@ -95,14 +111,32 @@ class PokedexViewController: UIViewController, UITableViewDelegate, UITableViewD
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let destination = segue.destination as? PokeDetailVC else {return}
-        print("dsd")
-        guard let sender = sender as? PokeCell else {return}
+        if let sender = sender as? UIBarButtonItem {
+            let destination = segue.destination as? SettingsViewController
+//            print(destination)
+//            destination?.versionGroupie = defaults.object(forKey: "versionGroup") as! String
+        }
+        if let sender = sender as? PokeCell{
+            let destination = segue.destination as? PokeDetailVC
+            destination?.pokename = sender.pokemonName.text!.lowercased()
+
+        }
         
 
-        print(sender.pokemonName.text!)
-        destination.pokename = sender.pokemonName.text!.lowercased()
+        //print(sender.pokemonName.text!)
     }
+    
+    @IBAction func showsFilter(_ sender: Any) {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut) {
+            let screenWidth: Double = (self.tabBarController?.view.frame.width)! * 0.5
+            let offset: Double = self.isMenuActive ? -screenWidth : screenWidth
+            self.tabBarController?.view.frame.origin.x += offset
+            
+        } completion: { (finished) in
+            self.isMenuActive = !self.isMenuActive
+        }
+    }
+
     
     
     

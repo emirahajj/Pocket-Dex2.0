@@ -13,6 +13,8 @@
 		042A525A28696B1700A74034 /* StatsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A525928696B1700A74034 /* StatsCell.swift */; };
 		042A525C28696B2300A74034 /* BreedingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A525B28696B2300A74034 /* BreedingCell.swift */; };
 		042A525E28696B4800A74034 /* FormsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A525D28696B4800A74034 /* FormsCell.swift */; };
+		04408C312888EB5A00F50FFC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04408C302888EB5A00F50FFC /* SettingsViewController.swift */; };
+		04408C332888F2B700F50FFC /* VersionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04408C322888F2B700F50FFC /* VersionCell.swift */; };
 		04440D46286291D500A2DF05 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04440D45286291D400A2DF05 /* APIHelper.swift */; };
 		046DCFC3286A30890082DF2C /* SizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046DCFC2286A30890082DF2C /* SizeView.swift */; };
 		046DCFC5286A30930082DF2C /* SizeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046DCFC4286A30930082DF2C /* SizeView.xib */; };
@@ -41,6 +43,8 @@
 		042A525928696B1700A74034 /* StatsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsCell.swift; sourceTree = "<group>"; };
 		042A525B28696B2300A74034 /* BreedingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedingCell.swift; sourceTree = "<group>"; };
 		042A525D28696B4800A74034 /* FormsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormsCell.swift; sourceTree = "<group>"; };
+		04408C302888EB5A00F50FFC /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		04408C322888F2B700F50FFC /* VersionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionCell.swift; sourceTree = "<group>"; };
 		04440D45286291D400A2DF05 /* APIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
 		046DCFC2286A30890082DF2C /* SizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeView.swift; sourceTree = "<group>"; };
 		046DCFC4286A30930082DF2C /* SizeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SizeView.xib; sourceTree = "<group>"; };
@@ -99,6 +103,7 @@
 				048CE18128680AC9007BEBEF /* MoveSetVC.swift */,
 				042A52552869693C00A74034 /* PokeDetailVC.swift */,
 				2DB49D662811290A00EA28FF /* PokedexViewController.swift */,
+				04408C302888EB5A00F50FFC /* SettingsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -124,6 +129,7 @@
 				042A525B28696B2300A74034 /* BreedingCell.swift */,
 				042A525D28696B4800A74034 /* FormsCell.swift */,
 				04820BA7286922920019DB50 /* MachineTutorCell.swift */,
+				04408C322888F2B700F50FFC /* VersionCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -268,10 +274,12 @@
 				04440D46286291D500A2DF05 /* APIHelper.swift in Sources */,
 				2D083B642865641C00E36EA8 /* AbilitiesView.swift in Sources */,
 				042A525C28696B2300A74034 /* BreedingCell.swift in Sources */,
+				04408C312888EB5A00F50FFC /* SettingsViewController.swift in Sources */,
 				04A3971B286832AC00B5F2A6 /* MoveCell.swift in Sources */,
 				04820BA8286922920019DB50 /* MachineTutorCell.swift in Sources */,
 				04C66710285E3FC1001471D4 /* Reference.swift in Sources */,
 				046DCFC3286A30890082DF2C /* SizeView.swift in Sources */,
+				04408C332888F2B700F50FFC /* VersionCell.swift in Sources */,
 				042A52562869693C00A74034 /* PokeDetailVC.swift in Sources */,
 				042A525A28696B1700A74034 /* StatsCell.swift in Sources */,
 				048CE18228680AC9007BEBEF /* MoveSetVC.swift in Sources */,

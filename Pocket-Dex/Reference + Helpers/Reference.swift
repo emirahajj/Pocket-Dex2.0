@@ -12,14 +12,40 @@ enum PokeType: String {
     case normal, fire, water, grass, electric, ice, poison, ground, flying, psychic, bug, rock, ghost, dark, dragon, steel, fairy, fighting
 }
 
-enum GameVersion {
+enum GameVersion: String, CaseIterable {
     case red, blue, yellow, gold, silver, crystal, ruby, sapphire, emerald, heartgold, soulsilver, diamond, pearl, platinum, black, white, black2, white2, x, y, omegaruby, alphasapphire, sun, moon, ultrasun, ultramoon
 }
-enum VersionGroup: String{
-    case redBlue = "red-blue"
-    case yellow
-    case goldSilver = "gold-silver"
-}
+
+let versionMascots: [GameVersion: Int] = [
+    .red: 6,
+    .blue: 9,
+    .yellow: 25,
+    .gold: 250,
+    .silver: 249,
+    .crystal: 245,
+    .ruby: 383,
+    .sapphire: 382,
+    .emerald: 384,
+    .heartgold: 250,
+    .soulsilver: 249,
+    .diamond: 483,
+    .pearl: 484,
+    .platinum: 487,
+    .black: 643,
+    .white: 644,
+    .black2: 10022,
+    .white2: 10023,
+    .x: 716,
+    .y: 717,
+    .omegaruby: 10078,
+    .alphasapphire: 10077,
+    .sun: 791,
+    .moon: 792,
+    .ultrasun: 10155,
+    .ultramoon: 10156
+        
+    
+]
 
 extension UIImageView {
     
